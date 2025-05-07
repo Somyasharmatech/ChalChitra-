@@ -7,16 +7,21 @@ from typing import List, Dict, Any, Optional, Tuple
 import json
 
 # Get database connection from environment variables
-DATABASE_URL = os.getenv("DATABASE_URL")
+import streamlit as st
+DATABASE_URL = st.secrets["DATABASE_URL"]["url"]
 
 # Create SQLAlchemy engine with SSL disabled for development
 engine = create_engine(
     DATABASE_URL,
+    pool_pre_ping=True,
     connect_args={
         "sslmode": "require",
-        "options": "-c statement_timeout=5000"
+        "keepalives": 1,
+        "keepalives_idle": 30,
+        "keepalives_interval": 10
     }
 )
+
 
 def get_connection():
     """Get a database connection"""
