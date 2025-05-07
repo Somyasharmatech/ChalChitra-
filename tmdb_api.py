@@ -3,7 +3,7 @@ import os
 import streamlit as st
 
 # TMDB API configuration
-TMDB_API_KEY = os.getenv("TMDB_API_KEY", "")
+TMDB_API_KEY = st.secrets["TMDB_API_KEY"]["key"
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
