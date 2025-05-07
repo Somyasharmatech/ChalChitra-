@@ -10,7 +10,13 @@ import json
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Create SQLAlchemy engine with SSL disabled for development
-engine = create_engine(DATABASE_URL, connect_args={"sslmode": "prefer"})
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={
+        "sslmode": "require",
+        "options": "-c statement_timeout=5000"
+    }
+)
 
 def get_connection():
     """Get a database connection"""
