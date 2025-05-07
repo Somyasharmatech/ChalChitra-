@@ -17,8 +17,7 @@ engine = create_engine(
     connect_args={
         "sslmode": "require",
         "keepalives": 1,
-        "keepalives_idle": 30,
-        "keepalives_interval": 10
+        "keepalives_idle": 30
     }
 )
 
