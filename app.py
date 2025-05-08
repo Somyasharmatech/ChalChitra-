@@ -47,7 +47,7 @@ if not st.session_state.played_intro:
     st.session_state.played_intro = True
     
 # Handle navigation based on query parameters
-query_params =  st.query_params()
+query_params =  st.experimental_get_query_params()
 current_view = "home"
 selected_movie = None
 
