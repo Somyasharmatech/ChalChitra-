@@ -92,6 +92,31 @@ def create_user_tables():
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    def create_preference_tables():
+    """Create user preference tables if they don't exist"""
+    # Create user_preferences table
+    execute_query("""
+        CREATE TABLE IF NOT EXISTS user_preferences (
+            id SERIAL PRIMARY KEY,
+            user_id INTEGER REFERENCES users(id) UNIQUE,
+            min_year INTEGER,
+            max_year INTEGER,
+            min_rating FLOAT,
+            preferred_languages TEXT[],
+            runtime_range INTEGER[],
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    
+    # Create user_genre_preferences table
+    execute_query("""
+        CREATE TABLE IF NOT EXISTS user_genre_preferences (
+            id SERIAL PRIMARY KEY,
+            user_id INTEGER REFERENCES users(id),
+            genre_id INTEGER REFERENCES genres(id),
+            UNIQUE (user_id, genre_id)
+    """)
     
     # Create user_auth table
     execute_query("""
