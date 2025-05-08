@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import os
+
 import database as db
 
 # TMDB API configuration
