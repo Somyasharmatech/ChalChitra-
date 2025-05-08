@@ -7,4 +7,10 @@ sqlalchemy>=2.0.40
 streamlit>=1.45.0
 trafilatura>=2.0.0
 python-dotenv>=1.0.0  # For environment variables
-
+streamlit>=1.45.0
+pandas>=2.2.3
+requests>=2.32.3
+sqlalchemy>=2.0.40
+psycopg2-binary>=2.9.10
+scikit-learn>=1.6.1
+numpy>=2.2.5
