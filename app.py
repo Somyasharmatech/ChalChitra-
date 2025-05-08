@@ -4,7 +4,7 @@ import os
 import base64
 from tmdb_api import get_trending_movies, search_movies, get_movie_details, get_similar_movies
 from recommendation_engine import get_recommendations
-from movie_data import get_all_genres, get_languages
+# from movie_data import get_all_genres, get_languages
 from quiz import display_quiz, process_quiz_results, get_or_create_user, ensure_session_id
 from utils import display_movie_card, display_movie_details, add_custom_css
 import database as db
