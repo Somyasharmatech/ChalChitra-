@@ -8,7 +8,7 @@ import json
 
 # Get database connection from environment variables
 import streamlit as st
-DATABASE_URL = st.secrets["DATABASE_URL"]["url"]
+DATABASE_URL = st.secrets["DATABASE_URL","postgresql://neondb_owner:Genalfa%40123@ep-odd-math-a433alqi-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require"]["url"]
 
 # Create SQLAlchemy engine with SSL disabled for development
 engine = create_engine(
